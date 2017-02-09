@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: jp.skypencil.guava:helper:1.0.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jp/skypencil/guava/helper/1.0.1/helper-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/jp/skypencil/guava/helper/1.0.1/helper-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/jp/skypencil/guava/helper/1.0.1/helper-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

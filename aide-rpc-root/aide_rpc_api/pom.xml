@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>aide-rpc-root</artifactId>
+        <groupId>com.aide.rpc</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aide_rpc_api</artifactId>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.aide.library.facebook.mojo.alternative</groupId>
+                <artifactId>swift-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <idlFiles>
+                        <directory>${project.basedir}/src/main/idl/</directory>
+                        <includes>
+                            <include>**/*.thrift</include>
+                        </includes>
+                        <!--<excludes>-->
+                        <!--<exclude>**/other.thrift</exclude>-->
+                        <!--</excludes>-->
+                    </idlFiles>
+                    <outputFolder>src/main/java</outputFolder>
+                    <usePlainJavaNamespace>true</usePlainJavaNamespace>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/beans/spring-context-4.2.xsd">
+
+
+    <context:component-scan base-package="com.aide.rpc.client">
+    </context:component-scan>
+
+
+    <bean id="ServiceResolver" class="com.aide.integration.registry.ServiceProviderHolder">
+        <constructor-arg>
+            <bean class="com.aide.registry.consul.ConsulRegistry">
+                <constructor-arg value="${consul.host}"/>
+                <constructor-arg value="${consul.port}"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+    <bean id="ServiceProxy" class="com.aide.proxy.thrift.poolable.PoolableThriftServiceProxy">
+        <constructor-arg>
+            <bean class="org.apache.commons.pool2.impl.GenericKeyedObjectPoolConfig">
+                <property name="testOnBorrow" value="true"/>
+                <property name="minIdlePerKey" value="1"/>
+                <property name="maxIdlePerKey" value="10"/>
+                <property name="maxTotalPerKey" value="100"/>
+                <property name="maxWaitMillis" value="5000"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="com.aide.integration.proxy.AideThriftServiceValidator"/>
+        </constructor-arg>
+    </bean>
+
+
+    <bean id="Calculator"
+          class="com.aide.integration.proxy.AideServiceBean">
+        <constructor-arg value="com.aide.rpc.api.Calculator"/>
+        <constructor-arg ref="ServiceProxy"/>
+        <constructor-arg ref="ServiceResolver"/>
+    </bean>
+</beans>

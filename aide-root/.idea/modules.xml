@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aide-core/aide-core.iml" filepath="$PROJECT_DIR$/aide-core/aide-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aide-integration/aide-integration.iml" filepath="$PROJECT_DIR$/aide-integration/aide-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aide-proxy-thrift/aide-proxy-thrift.iml" filepath="$PROJECT_DIR$/aide-proxy-thrift/aide-proxy-thrift.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aide-registry-consul/aide-registry-consul.iml" filepath="$PROJECT_DIR$/aide-registry-consul/aide-registry-consul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aide-root.iml" filepath="$PROJECT_DIR$/aide-root.iml" />
+    </modules>
+  </component>
+</project>

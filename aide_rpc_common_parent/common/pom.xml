@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.aide.rpc_common</groupId>
+        <artifactId>rpc_common_parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.aide.rpc_common</groupId>
+            <artifactId>common_meta</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+
+    <groupId>com.aide.rpc_common</groupId>
+    <artifactId>common</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.aide.library.facebook.mojo.alternative</groupId>
+                <artifactId>swift-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <idlFiles>
+                        <directory>${project.basedir}/src/main/idl/</directory>
+                        <includes>
+                            <include>**/*.thrift</include>
+                        </includes>
+                        <!--<excludes>-->
+                        <!--<exclude>**/other.thrift</exclude>-->
+                        <!--</excludes>-->
+                    </idlFiles>
+                    <outputFolder>src/main/java</outputFolder>
+                    <usePlainJavaNamespace>true</usePlainJavaNamespace>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.airlift:units:0.119">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/airlift/units/0.119/units-0.119.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/airlift/units/0.119/units-0.119-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/airlift/units/0.119/units-0.119-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
