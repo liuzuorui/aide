@@ -1,0 +1,1 @@
+swift 代码生成器改造，添加根据thrif 文件 生成代码时默认继承AideService类
